@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Ventilation Calculator</title>
+</head>
+<body>
+    <form action="/handler" method="POST" class="form">
+        <!-- Damper -->
+        <label class="form_section">
+            <h4>Заслонка</h4>
+            
+            <label class="form_input"><span class="form_title">Управление</span>
+                <div class="form_label">
+                    <label for="discret">
+                        <input type="radio" name="Управление заслонкой" id="discret" value="Дискретное"> Дискретное
+                    </label>
+                    <label for="analog">
+                        <input type="radio" name="Управление заслонкой" id="analog" value="Аналоговое"> Аналоговое
+                    </label>
+                </div>
+            </label>
+
+            <label class="form_input"><span class="form_title">Контроль открытия</span>
+                <div class="form_label">
+                    <label for="none">
+                        <input type="radio" name="Контроль открытия заслонки" id="none" value="Нет"> Нет
+                    </label>
+                    <label for="have">
+                        <input type="radio" name="Контроль открытия заслонки" id="have" value="Есть"> Есть
+                    </label>
+                </div>
+            </label>
+        </label>
+        <!-- /Damper -->
+
+        <!-- Filters -->
+        <label class="form_section">
+            <h4>Фильтра</h4>
+            <label class="form_input">
+                <span class="form_title">Количество</span>
+                <div class="form_label">
+                    <label for="quantity">
+                        <input type="text" name="Количество фильтров" id="quantity"> шт
+                    </label>
+                </div>
+            </label>
+
+            <label class="form_input"><span class="form_title">Сигналы</span>
+                <div class="form_label">
+                    <label for="split">
+                        <input type="radio" name="Сигналы фильтров" id="split" value="Разделены"> Разделены
+                    </label>
+                    <label for="merge">
+                        <input type="radio" name="Сигналы фильтров" id="merge" value="Объединены"> Объединены
+                    </label>
+                </div>
+            </label>
+        </label>
+        <!-- /Filters -->
+
+        <!-- Heater -->
+        <label class="form_section">
+            <h4>Нагреватель</h4>
+            <label class="form_input"><span class="form_title">Тип</span>
+                <div class="form_label">
+                    <label for="heater_water">
+                        <input type="radio" name="Тип нагревателя" id="heater_water" value="Водяной"> Водяной
+                    </label>
+                    <label for="heater_electric">
+                        <input type="radio" name="Тип нагревателя" id="heater_electric" value="Электрический"> Электрический
+                    </label>
+                </div>
+            </label>
+        </label>
+        <!-- /Heater -->
+
+        <!-- Cooler -->
+        <label class="form_section">
+            <h4>Охладитель</h4>
+            <label class="form_input"><span class="form_title">Тип</span>
+                <div class="form_label">
+                    <label for="cooler_none">
+                        <input type="radio" name="Тип охладителя" id="cooler_none" value="Нет"> Нет
+                    </label>
+                    <label for="cooler_water">
+                        <input type="radio" name="Тип охладителя" id="cooler_water" value="Водяной"> Водяной
+                    </label>
+                    <label for="cooler_phreon">
+                        <input type="radio" name="Тип охладителя" id="cooler_phreon" value="Фреоновый"> Фреоновый
+                    </label>
+                </div>
+            </label>
+        </label>
+        <!-- /Cooler -->
+
+        <!-- Fan -->
+        <label class="form_section">
+            <h4>Вентилятор</h4>
+            
+            <label class="form_input">
+                <span class="form_title">Мощность</span>
+                <div class="form_label">
+                    <label for="power">
+                        <input type="text" name="Мощность вентилятора" id="power"> кВт
+                    </label>
+                </div>
+            </label>
+
+            <label class="form_input"><span class="form_title">Управление</span>
+                <div class="form_label">
+                    <label for="direct_power">
+                        <input type="radio" name="Управление вентилята" id="direct_power" value="Прямой пуск"> Прямой пуск
+                    </label>
+                    <label for="freq_converter">
+                        <input type="radio" name="Управление вентилята" id="freq_converter" value="Преобразователь частоты"> Преобразователь частоты
+                    </label>
+                </div>
+            </label>
+        </label>
+        <!-- /Fan -->
+
+        <!-- Overall -->
+        <label class="form_section">
+            <h4>Общие</h4>
+            <label class="form_input"><span class="form_title">Корпус</span>
+                <div class="form_label">
+                    <label for="plastic">
+                        <input type="radio" name="Корпус" id="plastic" value="Пластик"> Пластик
+                    </label>
+                    <label for="metal">
+                        <input type="radio" name="Корпус" id="metal" value="Металл"> Металл
+                    </label>
+                </div>
+            </label>
+            <label for="options" class="form_input"><span class="form_title">Доп. опции</span>
+                <div class="form_label">
+                    <label for="fire_signal">
+                        <input type="checkbox" name="Сигнал пожар" id="fire_signal"> Сигнал Пожар
+                    </label>
+                    <label for="led_indicator">
+                        <input type="checkbox" name="LED-индикация" id="led_indicator"> LED-индикация
+                    </label>
+                    <label for="dispatcher">
+                        <input type="checkbox" name="Диспетчеризация" id="dispatcher"> Диспетчеризация
+                    </label>
+                </div>
+            </label>
+        </label>
+        <!-- /Overall -->
+
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>

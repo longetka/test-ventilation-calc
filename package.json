@@ -1,0 +1,31 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "simple nodejs app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/longetka/test-ventilation-calc.git"
+  },
+  "keywords": [
+    "express",
+    "html-form"
+  ],
+  "author": "Denis Cherepanov <longetka@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/longetka/test-ventilation-calc/issues"
+  },
+  "homepage": "https://github.com/longetka/test-ventilation-calc#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
