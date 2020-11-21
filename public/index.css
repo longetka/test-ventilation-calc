@@ -1,3 +1,8 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 h4 {
     color: #990000;
     text-align: center;
@@ -14,7 +19,7 @@ h4 {
 .form_section {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
 }
 
 .form_input {
@@ -27,7 +32,7 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
+    width: 70%;
 }
 .form_title {
     color: #4E6EA1;
@@ -39,4 +44,15 @@ input#quantity, input#power {
 }
 .form_input[for="options"] {
     align-items: flex-start;
+}
+
+@media screen and (max-width: 1024px) {
+    .form {
+        width: 40%;
+    }
+}
+@media screen and (min-width: 640px) {
+    .form {
+        width: 80%;
+    }
 }
