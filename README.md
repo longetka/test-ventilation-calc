@@ -6,6 +6,6 @@
 
 Чтобы запустить приложение 
 
-'cd test'
-'npm install'
-'npm start'
+#### cd test
+#### npm install
+#### npm start
